@@ -1,9 +1,15 @@
 package Models;
 
-public class Informativo extends Mensagem{
+public class Informativo implements Mensagem{
+
+    private String _destinatario;
 
     public Informativo(String destinatario) {
-        super(destinatario);
+        _destinatario = destinatario;
+    }
+
+    public String getDestinatario() {
+        return _destinatario;
     }
 
     @Override

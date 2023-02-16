@@ -1,9 +1,15 @@
 package Models;
 
-public class Urgente extends Mensagem{
+public class Urgente implements Mensagem{
+
+    private String _destinatario;
 
     public Urgente(String destinatario) {
-        super(destinatario);
+        _destinatario = destinatario;
+    }
+
+    public String getDestinatario() {
+        return _destinatario;
     }
 
     @Override
