@@ -1,6 +1,7 @@
 import Models.Agenda;
 import Models.Data;
 import Models.EventoDeAgenda;
+import Utils.Empacotamento;
 import Utils.EventoDeAgendaComparator;
 
 import java.util.Collections;
@@ -14,7 +15,7 @@ public class Main {
         System.out.println("======CADASTRO DE EVENTOS DE AGENDA======");
         System.out.println();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             System.out.print("Informe o código do evento '" + (i + 1) + "': ");
             String codigo = scanner.next();
 
@@ -50,6 +51,21 @@ public class Main {
         System.out.println();
         System.out.println("EVENTOS APÓS DA ORDENAÇÃO:");
         for (EventoDeAgenda evento : agenda.getEventos()) {
+            System.out.println(evento.toString());
+        }
+
+        System.out.println("SERIALIZANDO DADOS...");
+        String caminho = "C:\\repositorios\\arquivosGeradosLipII\\teste.bat";
+        Empacotamento.gravarArquivoBinario(agenda, caminho);
+
+        System.out.println("SERIALIZAÇÃO CONCLUÍDA...");
+        System.out.println();
+        System.out.println("DESSERIALIZANDO ARQUIVO...");
+        Agenda agendaDesserializada = (Agenda) Empacotamento.lerArquivoBinario(caminho);
+
+        System.out.println();
+        System.out.println("EVENTOS DESSERIALIZADOS:");
+        for (EventoDeAgenda evento : agendaDesserializada.getEventos()) {
             System.out.println(evento.toString());
         }
     }
