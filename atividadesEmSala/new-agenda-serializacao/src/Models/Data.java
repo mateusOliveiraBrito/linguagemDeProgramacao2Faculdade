@@ -1,6 +1,8 @@
 package Models;
 
-public class Data implements Comparable<Data> {
+import java.io.Serializable;
+
+public class Data implements Comparable<Data>, Serializable {
     private int dia, mes, ano;
 
     public Data(int dia, int mes, int ano) {

@@ -1,6 +1,8 @@
 package Models;
 
-public class EventoDeAgenda {
+import java.io.Serializable;
+
+public class EventoDeAgenda implements Serializable {
     private String codigo, nome;
     private Data data;
 

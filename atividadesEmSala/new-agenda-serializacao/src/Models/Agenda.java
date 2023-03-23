@@ -1,8 +1,9 @@
 package Models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Agenda {
+public class Agenda implements Serializable {
     private ArrayList<EventoDeAgenda> eventos;
 
     public Agenda() {
