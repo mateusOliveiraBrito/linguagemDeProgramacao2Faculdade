@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Empacotamento {
 
-    public static void gravarArquivoBinario(Object object, String caminho) {
+    public static void gravarArquivoBinario(Object object, String caminho) throws IOException {
         File arquivo = new File(caminho);
 
         try {
@@ -19,7 +19,7 @@ public class Empacotamento {
         }
     }
 
-    public static Object lerArquivoBinario(String caminho) {
+    public static Object lerArquivoBinario(String caminho) throws IOException, ClassNotFoundException {
         try {
             File arquivo = new File(caminho);
             if (arquivo.exists()) {
@@ -29,10 +29,10 @@ public class Empacotamento {
 
                 return object;
             }
-        } catch (IOException erro1) {
-            System.out.printf("Erro: %s", erro1.getMessage());
-        } catch (ClassNotFoundException erro2) {
-            System.out.printf("Erro: %s", erro2.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
         return null;
     }
