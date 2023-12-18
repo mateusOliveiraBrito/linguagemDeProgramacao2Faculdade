@@ -16,7 +16,8 @@ public class Main {
             System.out.println("======CADASTRO DE EVENTOS DE AGENDA======");
             System.out.println();
 
-            for (int i = 0; i < 1; i++) {
+            for (int i = 0; i < 3; i++) {
+                System.out.println();
                 System.out.print("Informe o código do evento '" + (i + 1) + "': ");
                 String codigo = scanner.next();
 
